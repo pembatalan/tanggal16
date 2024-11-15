@@ -1,7 +1,7 @@
 <html lang="id">
  <head> 
   <meta charset="UTF-8"> 
-  <meta name="fragment" content="!"> 
+ 
   <meta name="theme-color" content="#1E90FF"> 
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
    <meta content="© 2021 PT Bank Central Asia Tbk, All Rights Reserved." name="description">
@@ -45,7 +45,7 @@ body {
   left: 0;
   right: 0;
   margin: 0px auto;
-  position: absolute;
+  position: fixed;
 }
 }
 
@@ -65,7 +65,7 @@ body {
   left: 0;
   right: 0;
   margin: 0px auto;
-  position: absolute;
+  position: fixed;
 }
 }
 
@@ -94,9 +94,23 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     padding: 0px;
+    max-width: 100%;
     text-
   }
 }
+
+@media screen and (max-width: 700px), (max-height: 360px) {
+  .wrapper {
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0px;
+    max-width: 100%;
+    text-
+  }
+}
+
+
+
 
 .card-form {
   max-width: 570px;
